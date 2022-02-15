@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-3xl px-28">My Blogs</h1>
+<div class="w-full h-12 relevant flex justify-center ">
+  <%= link_to 'New Post', new_post_path, class:"h-8 text-xl border-2 border-black-900 p-0 text-center w-96 bg-gray-100 rounded-full" %>
+</div>
+
+<div class="w-full min-h-max">
+    <% @posts.each do |post| %>
+      <div class="w-full min-h-max my-14">
+        <div class="text-center h-12 p-3 text-2xl"><%= post.title %></div>
+        <div class="border-2 border-black-900 w-10/12 ml-28 h-96 p-8 rounded-lg bg-white text-lg text-justify indent-10">
+          <%= post.body %>
+        </div>
+        <div class="flex flex-row h-10 justify-center w-10/12 ml-28 border-2 border-gray-400 rounded-lg">
+          <div class="flex flex-row h-10 justify-evenly w-3/6">
+            <div class=" p-2 text-base hover:bg-sky-500 rounded-lg" id="post">
+              <%= link_to 'Show', post %></div>
+            <div class=" p-2 text-base hover:bg-amber-500 rounded-lg">
+              <%= link_to 'Edit', edit_post_path(post) %></div>
+            <div class="  p-2 text-base hover:bg-red-700 rounded-lg">
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </dv>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+

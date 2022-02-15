@@ -1,0 +1,27 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="px-36 py-6 rounded-full w-full">
+    <%= form.label :book_title, class: "text-2xl" %>
+    <%= form.text_field :title, class: "border-4 w-full border-t-0 border-r-0 border-l-0 text-xl" %>
+  </div>
+
+  <div class="px-36 py-6 rounded-full">
+    <%= form.label :Description, class:"text-2xl py-4" %>
+    <%= form.text_area :body, class: "border-1 rounded-md w-full min-h-min h-96 max-h-max p-6 text-xl text-justify" %>
+  </div>
+
+  <div class="relative w-full">
+    <%= form.submit "Save", class: "h-16 w-16 text-xl absolute top-0 right-36 border-2 border-black-500 outline outline-offset-4 rounded-lg outline-green-600 hover:bg-green-300 cursor-pointer" %>
+  </div>
+<% end %>

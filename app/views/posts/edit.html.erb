@@ -1,0 +1,15 @@
+<h1 class="text-3xl text-center">Editing Post</h1>
+
+<%= render 'form', post: @post %>
+
+<div class="w-3/6 h-16 flex flex-row px-32">
+    <div class="border-2 border-red-800 w-20 h-16 text-xl text-center p-3 rounded-lg mx-6 outline outline-offset-4 hover:bg-red-200 cursor-pointer"> 
+        <%= link_to 'Back', posts_path %>
+    </div>
+    <div class="border-2 border-blue-600 w-20 h-16 text-xl text-center p-3 rounded-lg mx-32 outline outline-offset-4 hover:bg-blue-200 cursor-pointer">
+        <%= link_to 'Show', @post, class:" "%> 
+    </div>
+</div>
+
+
+

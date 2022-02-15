@@ -1,0 +1,39 @@
+<div class="w-full h-96 min-h-max flex justify-center">
+  <div class="w-3/6 h-96 rounded">
+    <div class="w-full h-16 rounded text-center">
+      <p class="text-2xl" id="notice"><%= notice %></p>
+    </div>
+    <div class="border-2 border-black-900 w-full h-16 p-4 text-3xl rounded">
+      <p class="text-xl">
+        <strong>Title:</strong>
+        <%= @post.title %>
+      </p>
+    </div>
+    <div class="border-2 border-black-900 w-full v max-h-max p-4 rounded">
+      <p class="text-xl">
+        <strong>Body:</strong>
+        <%= @post.body %>
+      </p>
+    </div > 
+      
+    <div class="border-2 border-black w-full h-12 rounded flex justify-center p-2 flex-row">
+      <div class="w-3/6 flex flex-row justify-evenly text-lg">
+        <div>
+          <%= link_to 'Back', posts_path %>
+        </div>
+        <div>
+          <%= link_to 'Edit', edit_post_path(@post) %> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
